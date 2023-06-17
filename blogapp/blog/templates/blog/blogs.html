@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row vh-100 mt-2">
+  <div class="col-4">{% include "partials/_categories.html" %}</div>
+  <div class="col-8">
+    {% if blogs|length > 0 %} {% for blog in blogs %}
+    <!---->
+    {% include "blog/partials/_cardcontent.html" %}
+    <!---->
+    {% endfor %} {% else %}
+    <div class="alert alert-danger">No Blog Found</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

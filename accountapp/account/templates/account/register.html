@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+<!---->
+{% block content %}
+<form action="{% url 'register' %}" method="POST">
+  {% if error %}
+  <div class="alert alert-warning">{{ error }}</div>
+  {% endif %} {% csrf_token %}
+  <div class="mb-3">
+    <label for="inputfullname" class="form-label">First name</label>
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="fullnameHelp"
+      id="inputfullname"
+      name="firstname"
+      required
+      value="{{firstname}}"
+    />
+    <label for="inputlastname" class="form-label">Last name</label>
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="fullnameHelp"
+      id="inputlastname"
+      name="lastname"
+      required
+      value="{{lastname}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="inputusername" class="form-label">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="usernameHelp"
+      id="inputusername"
+      name="username"
+      required
+      value="{{username}}"
+    />
+    <div id="usernameHelp" class="form-text">Username must be unique.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      name="email"
+      aria-describedby="emailHelp"
+      required
+      value="{{email}}"
+    />
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="password"
+      required
+      value="{{password}}"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}

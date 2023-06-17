@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="row vh-100 mt-2">
+  <div class="col-4">{% include "partials/_categories.html" %}</div>
+  <div class="col-8">
+    <!---->
+    {% for blog in blogs %}
+    <!---->
+    {% include "blog/partials/_cardcontent.html" %}
+    <!---->
+    {% endfor %}
+    <!---->
+  </div>
+</div>
+{% endblock content %}

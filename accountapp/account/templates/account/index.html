@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!---->
+{% block content %} {% if user.is_authenticated %}
+<div class="card text-center">
+  <div class="card-titl">{{user}}</div>
+  <div class="card-body">You Are Authenticated! Congratulations</div>
+</div>
+{% else %}
+<div class="card">
+  <div class="card-title text-center">
+    You Are Not Authenticated!
+    <div>
+      <div class="card-body">
+        You are authenticate here
+        <a href="{% url 'login' %}">Login</a>
+        or
+        <a href="{% url 'login' %}">Register</a>
+      </div>
+    </div>
+    {% endif %} {% endblock content %}
+  </div>
+</div>

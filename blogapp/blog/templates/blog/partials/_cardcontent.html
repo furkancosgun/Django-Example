@@ -1,0 +1,27 @@
+{% load static %}
+<!--
+<a href="{% url 'blog_detail' blog.id %}"
+  >
+  -->
+
+<a href="{% url 'blog_detail' blog.slug %}">
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <!--statik resim 
+        <img src="{% static "img/"|add:blog.img %}" class="img-fluid
+        rounded-start" />
+        -->
+
+        <!--Artik bu şekilde kullanırız img özelliğime django otomatik olarak url özelliği katmiştir-->
+        <img src="{{ blog.img.url }}" class="img-fluid rounded-start" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ blog.title }}</h5>
+          <p class="card-text">{{ blog.description|safe }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

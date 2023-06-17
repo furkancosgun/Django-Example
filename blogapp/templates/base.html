@@ -1,0 +1,19 @@
+{% load static %}<!--Static Dosyaları Yukleriz-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!--Static Altından Alıp Kullanırız-->
+  </head>
+  <body>
+    <div class="container">
+      {% include 'partials/_navbar.html' %}<!--Şeklinde Dahil Edilir Partial View-->
+      <div class="container">{% block content %} {% endblock content %}</div>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
