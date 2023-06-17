@@ -1,4 +1,4 @@
-Django ile 1 auth yönetim uygulaması | sifirdan orta seviyeye kadar blog uygulaması 
+Django ile auth yönetim uygulaması | sifirdan orta seviyeye kadar blog uygulaması 
 
 <a href="https://github.com/furkancosgun/Django-Example/blob/master/accountapp/readme.md" >Authentication Projesi</a>
 
